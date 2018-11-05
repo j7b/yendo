@@ -159,30 +159,14 @@ func mousemove(x, y int) {
 func mouseclick(x, y, btn int) {
 	println("mouseclick")
 	x -= 100
-	println(x)
 	y -= 100
 	dx := float32(x) / 100.0
-	if x < 0 && dx > 0 {
-		println(x)
-		println("bad dx := float32(x) / 100.0")
-		println(dx)
-	}
-	// y := float32(y) / 1000
-	/*
-		triangle.A = Vec{X: -0.5, Y: 0.5, R: 1.0, G: 1.0, B: 1.0, A: 1.0}
-		triangle.B = Vec{X: -0.5, Y: -0.5, R: 1.0, G: 1.0, B: 1.0, A: 1.0}
-		triangle.C = Vec{X: 0.5, Y: -0.5, R: 1.0, G: 1.0, B: 1.0, A: 1.0}
-	*/
-	// triangle.A.X = -0.5 + x
 	triangle.A.X = -0.5 + dx
 	triangle.B.X = -0.5 + dx
 	triangle.C.X = 0.5 + dx
 	triangle.A.Y = 0.5
 	triangle.B.Y = -0.5
 	triangle.C.Y = -0.5
-	// println("mouseclick")
-	// println(x)
-	// println(y)
 }
 
 //go:export add
